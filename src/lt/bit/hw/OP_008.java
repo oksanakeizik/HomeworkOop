@@ -1,5 +1,7 @@
 package lt.bit.hw;
 
+import java.util.Scanner;
+
 /**
  * LT Parašykite paprasto skaičiuotuvo programą. Skaičiuotuvas turi mokėti atlikti aritmetines,
  * logines ir bitines operacijas.
@@ -9,63 +11,69 @@ package lt.bit.hw;
 
 public class OP_008 {
     public static void main(String[] args) {
-        // checkArithmeticOperators();
-        // checkBooleanOperators();
-        checkBitwiseOperators();
-    }
+        Scanner input = new Scanner(System.in);
+        int a, b;
+        System.out.println("Please enter the first number a: ");
+        a = input.nextInt();
+        System.out.println("Please enter the second number b: ");
+        b = input.nextInt();
 
-    private static void checkArithmeticOperators() {
-        int a = 20;
-        int b = 30;
-        int c = 35;
-        int d = 35;
-        System.out.println("a + b = " + (a + b));
-        System.out.println("a - b = " + (a - b));
-        System.out.println("a * b = " + (a * b));
-        System.out.println("b / a = " + (b / a));
-        System.out.println("b % a = " + (b % a));
-        System.out.println("c % a = " + (c % a));
-        System.out.println("a++   = " + (a++));
-        System.out.println("b--   = " + (a--));
-        System.out.println("d++   = " + (d++));
-        System.out.println("++d   = " + (++d));
-    }
+        System.out.println("Please choose one possible options:\n" +
+                " Arithmetic:  + , - , / , * , % " + "\n" +
+                " Boolean:  == , > , < , != , >= , <= " + "\n" +
+                " Bitwise:  | , & , ^");
+        String c = input.next();
 
-    private static void checkBooleanOperators() {
-        boolean a = true;
-        boolean b = false;
-        System.out.println("a && b = " + (a && b));
-        System.out.println("a || b = " + (a || b));
-        System.out.println("!(a && b) = " + !(a && b));
-    }
+        double addition = a + b;
+        double subtracts = a - b;
+        double division = a / b;
+        double multiplication = a * b;
+        double modulus = a % b;
 
-    private static void checkBitwiseOperators() {
-        int a = 60;
-        int b = 13;
-        int c = 0;
-        System.out.println(Integer.toBinaryString(a));
-        System.out.println(Integer.toBinaryString(b));
-        c = a & b;
-        System.out.println("a & b = " + c);
-        System.out.println(Integer.toBinaryString(c));
-        c = a | b;
-        System.out.println("a | b = " + c);
-        System.out.println(Integer.toBinaryString(c));
-        c = a ^ b;
-        System.out.println("a ^ b = " + c);
-        System.out.println(Integer.toBinaryString(c));
-        c = ~a;
-        System.out.println("~a = " + c);
-        System.out.println(Integer.toBinaryString(c));
-        c = a << 2;
-        System.out.println("a << 2 = " + c);
-        System.out.println(Integer.toBinaryString(c));
-        c = a >> 2;
-        System.out.println("a >> 2  = " + c);
-        System.out.println(Integer.toBinaryString(c));
-        c = a >>> 2;
-        System.out.println("a >>> 2 = " + c);
-        System.out.println(Integer.toBinaryString(c));
+        switch (c) {
+            case ("+"):
+                System.out.println("a + b = " + addition);
+                break;
+            case ("-"):
+                System.out.println("a - b = " + subtracts);
+                break;
+            case ("/"):
+                System.out.println("a / b = " + division);
+                break;
+            case ("*"):
+                System.out.println("a * b = " + multiplication);
+                break;
+            case ("%"):
+                System.out.println("a % b =  " + modulus);
+                break;
+            case ("=="):
+                System.out.println("a == b is " + (a == b));
+                break;
+            case (">"):
+                System.out.println("a > b is " + (a > b));
+                break;
+            case ("<"):
+                System.out.println("a < b is " + (a < b));
+                break;
+            case ("!="):
+                System.out.println("a != b is " + (a != b));
+                break;
+            case (">="):
+                System.out.println("b >= a is " + (b >= a));
+                break;
+            case ("<="):
+                System.out.println("b <= a is " + (b <= a));
+                break;
+            case ("&"):
+                System.out.println("Bitwise AND: a & b = " + (a & b));
+                break;
+            case ("|"):
+                System.out.println("Bitwise OR: a | b = " + (a | b));
+                break;
+            case ("^"):
+                System.out.println("Bitwise XOR: a ^ b = " + (a ^ b));
+                break;
+        }
     }
 }
 

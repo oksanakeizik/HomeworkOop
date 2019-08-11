@@ -4,33 +4,68 @@ import java.util.Scanner;
 
 public class ScannerOP_008 {
     public static void main(String[] args) {
-        double num1, num2;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter first number: ");
-        num1 = scanner.nextDouble();
-        System.out.print("Enter second number: ");
-        num2 = scanner.nextDouble();
-        System.out.print("Enter operator ( +, -, *, /): ");
-        char operator = scanner.next().charAt(0);
-        scanner.close();
-        double output;
-        switch (operator) {
-            case '+':
-                output = num1 + num2;
+        Scanner input = new Scanner(System.in);
+        int a, b;
+        System.out.println("Please enter the first number a: ");
+        a = input.nextInt();
+        System.out.println("Please enter the second number b: ");
+        b = input.nextInt();
+
+        System.out.println("Please choose one possible options:\n" +
+                " Arithmetic:  + , - , / , * , % " + "\n" +
+                " Boolean:  == , > , < , != , >= , <= " + "\n" +
+                " Bitwise:  | , & , ^");
+        String c = input.next();
+
+        double addition = a + b;
+        double subtracts = a - b;
+        double division = a / b;
+        double multiplication = a * b;
+        double modulus = a % b;
+
+        switch (c) {
+            case ("+"):
+                System.out.println("a + b = " + addition);
                 break;
-            case '-':
-                output = num1 - num2;
+            case ("-"):
+                System.out.println("a - b = " + subtracts);
                 break;
-            case '*':
-                output = num1 * num2;
+            case ("/"):
+                System.out.println("a / b = " + division);
                 break;
-            case '/':
-                output = num1 / num2;
+            case ("*"):
+                System.out.println("a * b = " + multiplication);
                 break;
-            default:
-                System.out.printf("You have entered wrong operator");
-                return;
+            case ("%"):
+                System.out.println("a % b =  " + modulus);
+                break;
+            case ("=="):
+                System.out.println("a == b is " + (a == b));
+                break;
+            case (">"):
+                System.out.println("a > b is " + (a > b));
+                break;
+            case ("<"):
+                System.out.println("a < b is " + (a < b));
+                break;
+            case ("!="):
+                System.out.println("a != b is " + (a != b));
+                break;
+            case (">="):
+                System.out.println("b >= a is " + (b >= a));
+                break;
+            case ("<="):
+                System.out.println("b <= a is " + (b <= a));
+                break;
+            case ("&"):
+                System.out.println("Bitwise AND: a & b = " + (a & b));
+                break;
+            case ("|"):
+                System.out.println("Bitwise OR: a | b = " + (a | b));
+                break;
+            case ("^"):
+                System.out.println("Bitwise XOR: a ^ b = " + (a ^ b));
+                break;
         }
-        System.out.println(num1 + " " + operator + " " + num2 + " = " + output);
     }
 }

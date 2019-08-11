@@ -10,5 +10,6 @@ package lt.bit.hw;
 public class OP_019 {
     public static void main(String[] args) {
 
+
     }
 }
