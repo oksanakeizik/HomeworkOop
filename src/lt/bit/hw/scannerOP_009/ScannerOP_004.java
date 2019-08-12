@@ -1,4 +1,4 @@
-package lt.bit.hw.ScannerOP_009;
+package lt.bit.hw.scannerOP_009;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;

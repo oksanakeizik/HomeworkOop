@@ -19,6 +19,5 @@ public class OP_017 {
                 System.out.printf("%2d ", i * j);
             System.out.printf("\n");
         }
-
     }
 }
